@@ -6,6 +6,15 @@
 
 ```js
 // your code goes here
+function calculateDogAge(){
+    let yourPuppysAge = +prompt("your Pupp's Age");
+    let yourhumanAge = +prompt ("your human age");
+    return yourPuppysAge*yourhumanAge;
+    return yourPuppysAge*7;
+  }
+
+alert("Your doggie is" + calculateDogAge() + "years old in dog years!");
+
 ```
 2. 🎖Write a function named calculateSupply that:
   * [ ] takes 2 arguments: age, amount per day.
@@ -15,6 +24,19 @@
 
 ```js
 // your code goes here
+
+var maxAge = 64;
+
+function calculateSupply() {
+
+  var age = +prompt("Enter your age");
+  var amountPerDay = +prompt("Enter your daily wage");
+
+  return amountPerDay * maxAge;
+
+}
+alert("You will need " + calculateSupply() + " to last you until the ripe old age of " + `${maxAge}`);
+
 ```
 3. 🎖Create a function called celsiusToFahrenheit:
   * [ ] Store a celsius temperature into a variable.
@@ -25,6 +47,25 @@
 
 ```js
 // your code goes here
+function celciusToFarenheit() {
+    
+    var celciusTemperature = +prompt("Enter Temp");
+    var celciusInFarenheit = celciusTemperature * 9/5 + 32;
+    var calculateResult = celciusTemperature * celciusInFarenheit;
+  
+    alert (`${celciusTemperature} °C is ${Math.round(calculateResult)} °F`);
+
+}
+
+function farenheitToCelcius() {
+
+      var farenheitTemperature = +prompt("Enter Temp");
+      var farenheitIncelcius = (farenheitTemperature - 32) * 5/9;
+      var calculateResult = farenheitTemperature * farenheitIncelcius;
+
+      alert (`${farenheitTemperature} °F is ${Math.round(calculateResult)} °C`);
+
+}
 ```
 4. 🎖The function below returns true if the parameter age is greater than 18. Otherwise it asks for a confirmation and returns its result:
 
@@ -33,7 +74,6 @@ function checkAge(age) {
   if (age > 18) {
     return true;
   } else {
-    // ...
     return confirm("Did parents allow you?");
   }
 }
