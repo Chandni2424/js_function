@@ -6,6 +6,15 @@
 
 ```js
 // your code goes here
+function calculateDogAge(){
+    let yourPuppysAge = +prompt("your Pupp's Age");
+    let yourhumanAge = +prompt ("your human age");
+    return yourPuppysAge*yourhumanAge;
+    return yourPuppysAge*7;
+  }
+
+alert("Your doggie is" + calculateDogAge() + "years old in dog years!");
+
 ```
 2. 🎖Write a function named calculateSupply that:
   * [ ] takes 2 arguments: age, amount per day.
@@ -15,6 +24,19 @@
 
 ```js
 // your code goes here
+
+var maxAge = 64;
+
+function calculateSupply() {
+
+  var age = +prompt("Enter your age");
+  var amountPerDay = +prompt("Enter your daily wage");
+
+  return amountPerDay * maxAge;
+
+}
+alert("You will need " + calculateSupply() + " to last you until the ripe old age of " + `${maxAge}`);
+
 ```
 3. 🎖Create a function called celsiusToFahrenheit:
   * [ ] Store a celsius temperature into a variable.
@@ -25,6 +47,25 @@
 
 ```js
 // your code goes here
+function celciusToFarenheit() {
+    
+    var celciusTemperature = +prompt("Enter Temp");
+    var celciusInFarenheit = celciusTemperature * 9/5 + 32;
+    var calculateResult = celciusTemperature * celciusInFarenheit;
+  
+    alert (`${celciusTemperature} °C is ${Math.round(calculateResult)} °F`);
+
+}
+
+function farenheitToCelcius() {
+
+      var farenheitTemperature = +prompt("Enter Temp");
+      var farenheitIncelcius = (farenheitTemperature - 32) * 5/9;
+      var calculateResult = farenheitTemperature * farenheitIncelcius;
+
+      alert (`${farenheitTemperature} °F is ${Math.round(calculateResult)} °C`);
+
+}
 ```
 4. 🎖The function below returns true if the parameter age is greater than 18. Otherwise it asks for a confirmation and returns its result:
 
@@ -33,7 +74,6 @@ function checkAge(age) {
   if (age > 18) {
     return true;
   } else {
-    // ...
     return confirm("Did parents allow you?");
   }
 }
@@ -41,6 +81,11 @@ function checkAge(age) {
   4.1 🎖Convert the above function using ternary operator.
   ```js
   // your code goes here
+  function checkage(age){
+    return(age > 18) ? true : confirm("Did parents allow you? ");
+  }
+
+
   ```
 
   4.2 🎖Convert the above function using `||` operator.
@@ -57,8 +102,16 @@ function checkAge(age) {
   // ...
   return confirm("Did parents allow you?");
 }
+
+function checkAge(age){
+  return (age > 18) || confirm("Did parents allow you?");
+}
+
+
+
 ```
 Is there any difference in the behavior of these two variants? If there is what is that?
+No
 
 
 5. 🎖 Write a function pow(x,n) that returns x in power n.
@@ -69,26 +122,72 @@ Is there any difference in the behavior of these two variants? If there is what 
 ```js
 // Your code goes here
 
+function pow(x, n) {
+  var result = x;
+
+  for (var i = 1; i < n; i++) {
+    result = result * x;
+  }
+
+  return result;
+}
+
+var x = +prompt("Put a value");
+let n = +prompt("Put a value");
+
+if (n < 1) {
+  alert(`Power ${n} is not supported, use a positive integer`);
+} else {
+  alert( pow(x, n) );
+}
+
 // After writing code uncomment to check the answer.
 // pow(3, 2); // 9
 // pow(3, 3); // 27
 // pow(1, 100); // 1
 // pow(-31, 2); // "The number below 1 is not allowed"
 
+
+
 6. 🎖Write a program that asks the user for a number n and gives them the possibility to choose between computing the sum and computing the product of 1,…,n. Return the result accordingly.
 
 ```js
 // your code goes here
+
+var sum = 1;
+var n = +prompt("Enter a number");
+var operator = prompt("Enter an operator like +/*");
+if(operator == "+"){
+for (let i=1; i<=n; i++){
+    sum = sum+i;
+}
+}
+else if(operator== "*"){
+for (let i=2; i<=n; i++){
+sum = sum*i;
+}
+}
 ```
 6. 🎖Write a program that asks the user for a number n using prompt and prints the sum of the numbers 1 to n
 
 ```js
 // your code goes here
+var sum = 0;
+var n = +prompt("Enter a number");
+for (i=1; i<=n; i++){
+sum = sum+i;
+}
+alert(sum);
 ```
 7. 🎖Modify the previous program such that only multiples of 5 or 7 are considered in the sum, e.g. n = 20 (5,7,10,14,15,20) 71
 
 ```js
 // your code goes here
+var n = +prompt("Enter a number");
+for (let i=1; i<=n; i++) {
+if(i%5===0 || i%7===0)
+console.log(i);
+}
 ```
 
 8. 🎖Write a function `min` that takes two arguments and returns their minimum.
@@ -100,4 +199,12 @@ console.log(min(0, 10));
 // → 0
 console.log(min(0, -10));
 // → -10
+
+function min(a, b){
+if(a>b) 
+return b;
+else if(b>a)
+return a;
+}
+console.log(min(6, 5));
 ```
